@@ -1,0 +1,35 @@
+<h1>Meals</h1>
+
+<p>Vegan</p>
+<ul>
+
+	<% @meals.each do |meal| %>
+		<% if meal.diet_id == 1 %>
+			<li>
+				<%= meal.name %>
+			</li>
+		<% end %>
+	
+	<% end %>
+</ul>
+
+<p>Vegetarian</p>
+	<% @meals.each do |meal| %>
+		<% if meal.diet_id < 3 %>
+			<li>
+				<%= meal.name %>
+			</li>
+		<% end %>
+	
+	<% end %>
+
+
+<p>Omnivore</p>
+<ul>
+
+	<% @meals.each do |meal| %>
+			<li>
+				<%= meal.name %>
+			</li>
+	<% end %>
+</ul>
