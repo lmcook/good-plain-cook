@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Diet.create [
+DIETS = [
 {
 	diet: "vegan"
 	},
@@ -15,7 +15,12 @@ Diet.create [
 	},
 {
 	diet: "omnivore"
-	}]
+	}
+]
+
+DIETS.each do |diet|
+	Diet.create(diet) unless Diet.where(:diet => diet[:diet]).first	
+end
 
 Meal.create [
 	{
@@ -57,7 +62,7 @@ Meal.create [
 
 ]
 
-Ingredient.create [
+INGREDIENTS = [
 {
 	ingredient: "bread",
 	diet_id: 1
@@ -109,9 +114,19 @@ Ingredient.create [
 	{
 		ingredient: "spinach",
 		diet_id: 1
+	},
+	{
+		ingredient: "celery",
+		diet_id: 1
+	},
+	{
+		ingredient: "cabbage",
+		diet_id: 1
 	}
 ]
-
+	INGREDIENTS.each do |ingredient|
+		Ingredient.create(ingredient) unless Ingredient.where(:ingredient => [:ingredient]).first
+	end
 
 
 
