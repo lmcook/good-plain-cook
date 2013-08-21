@@ -1,27 +1,9 @@
-<h1>Ingredients</h1>
-
-
-
-<p>Vegan</p>
-<ul>
-
-	<% @ingredients.each do |ingredient| %>
-		<% if ingredient.diet_id == 1 %>
-			<li>
-				<%= ingredient.ingredient %>
-			</li>
-		<% end %>
-	
-	<% end %>
-</ul>
-
-<p>Vegetarian</p>
+<h1>All Ingredients</h1>
 
 <ul>
-
 	<% @ingredients.each do |ingredient| %>
-			<li>
-				<%= ingredient.ingredient %>
-			</li>
+		<li>
+			<%= ingredient.ingredient %>
+		</li>	
 	<% end %>
 </ul>

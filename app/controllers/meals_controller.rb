@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
 	def index
-		@meals = Meal.all
+		@diet = Diet.find(params[:diet_id])
+		@meals = @diet.meals
 	end
 end

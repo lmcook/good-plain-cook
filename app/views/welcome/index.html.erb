@@ -1,17 +1,19 @@
-<h1>Welcome to Good Plain Cook!</h1>
+<h1>Good Plain Cook</h1>
 
-<h2>I am ...</h2>
-<!-- put a form in here -->
-vegan
-vegetarian
-omnivore
+<h2>what's for dinner?</h2>
 
-meals
-ingredients
-methods
+<% Diet.all.each do |diet| %>
+  <h3><%= link_to diet.diet, diet_meals_path(diet.id) %></h3>
+<% end %>
 
-<p>Good Plain Cook will suggest <%= link_to 'meals', meals_path %> for you based on your food preferences, the time you've got available, and what she reckons you should eat.</p>
+<h2>featured vegetable</h2>
 
-<p>You will also be able to browse by <%= link_to 'ingredient', ingredients_path %>, learn some basic cooking techniques, and make a shopping list.</p>
+	<h3>leek</h3>
+	#TODO add link_to leek when I've worked out the path
 
-<p>Super!</p>
+<h2>ingredients</h2>
+
+
+
+
+<p>Want to sign up, or sign in? Super!</p>
